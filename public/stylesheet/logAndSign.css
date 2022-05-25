@@ -1,0 +1,20 @@
+body {
+    background-image: linear-gradient(180deg, #888888, rgba(253, 253, 253, 0.178));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar{
+    background-color: #002f8b;
+}
+ h1{
+     padding-top: 50px;
+     text-align: center;
+}
+
+
+.navbar-brand{
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Supermercado One', cursive;
+}

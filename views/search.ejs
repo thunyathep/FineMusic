@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="main">
+        <div class="album py-5">
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-3">
+                    <% Music.forEach(function(allSearch){ %>
+                        <div class="col">
+                            <div class="card shadow-lg">
+                                <div class="card-body">
+                                    <img src="<%= allSearch.musicImage %>" class="musicImage musicImage-card">
+                                    <p class="musicName musicName-card">
+                                        <%= allSearch.music %>
+                                    </p>
+                                    <p class="artistName-card hidden">
+                                        <%= allSearch.artist %>
+                                    </p>
+                                    <i class="fa-solid fa-circle-play float-end" id="playmusic"></i>
+                                    <i class="fa-regular fa-heart"></i>
+                                    <audio class="track">
+                                        <source src="<%= allSearch.filemusic %>" type="audio/mp3">
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 space">
+
+        </div>
+    </div>
+
+    <%- include("partials/footerconsole.ejs") %>

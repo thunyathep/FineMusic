@@ -1,0 +1,68 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="main">
+
+        <% if(!currentUser){ %>
+            <h2>Recommend</h2>
+            <div class="album py-5">
+                <div class="container-fluid">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-3">
+                        <% Music.forEach(function(allMusic){ %>
+                            <div class="col">
+                                <div class="card shadow-lg">
+                                    <div class="card-body">
+                                        <img src="<%= allMusic.musicImage %>" class="musicImage musicImage-card">
+                                        <p class="musicName musicName-card">
+                                            <%= allMusic.music %>
+                                        </p>
+                                        <p class="artistName-card hidden"><%= allMusic.artist %></p>
+                                        <i class="fa-solid fa-circle-play float-end" id="playmusic"></i>
+                                        <i class="fa-regular fa-heart"></i>
+                                        <audio class="track">
+                                            <source src="<%= allMusic.filemusic %>" type="audio/mp3">
+                                        </audio>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 space">
+
+            </div>
+
+
+            <% } else{ %>
+                <h2>Recommend</h2>
+                <div class="album py-5">
+                    <div class="container-fluid">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-3">
+                            <% Music.forEach(function(allMusic){ %>
+                                <div class="col">
+                                    <div class="card shadow-lg">
+                                        <div class="card-body">
+                                            <img src="<%= allMusic.musicImage %>" class="musicImage musicImage-card">
+                                            <p class="musicName musicName-card">
+                                                <%= allMusic.music %>
+                                            </p>
+                                            <p class="artistName-card hidden"><%= allMusic.artist %></p>
+                                            <i class="fa-solid fa-circle-play float-end" id="playmusic"></i>
+                                            <i class="fa-regular fa-heart"></i>
+                                            <audio class="track">
+                                                <source src="<%= allMusic.filemusic %>" type="audio/mp3">
+                                            </audio>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 space">
+
+                </div>
+
+                <% } %>
+    </div>
+    <%- include("partials/footerconsole.ejs") %>
